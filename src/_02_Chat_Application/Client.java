@@ -40,8 +40,9 @@ public class Client {
 		
 		while (connection.isConnected()) {
 			try {
-				System.out.println(is.readObject());
-				JOptionPane.showMessageDialog(null, is.readObject());
+				String s = (String) is.readObject();
+				System.out.println(s);
+				JOptionPane.showMessageDialog(null, s);
 				
 				
 			} catch (Exception e) {
