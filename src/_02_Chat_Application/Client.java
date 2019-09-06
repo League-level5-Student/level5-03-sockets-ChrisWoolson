@@ -1,6 +1,7 @@
 package _02_Chat_Application;
 
 import java.io.IOException;
+
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
@@ -39,8 +40,10 @@ public class Client {
 		
 		while (connection.isConnected()) {
 			try {
-				JOptionPane.showMessageDialog(null, is.readObject());
 				System.out.println(is.readObject());
+				JOptionPane.showMessageDialog(null, is.readObject());
+				
+				
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

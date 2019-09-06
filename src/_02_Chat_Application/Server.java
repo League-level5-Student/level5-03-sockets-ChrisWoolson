@@ -1,6 +1,7 @@
 package _02_Chat_Application;
 
 import java.io.EOFException;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -41,7 +42,9 @@ String s;
 				
 				
 				try {
+					System.out.println(is.readObject());
 					JOptionPane.showMessageDialog(null, is.readObject());
+					
 					System.out.println(is.readObject());
 				}catch(EOFException e) {
 					JOptionPane.showMessageDialog(null, "Connection Lost");
@@ -70,6 +73,7 @@ String s;
 		s= JOptionPane.showInputDialog( "Send message here");
 		try {
 			if (os != null) {
+				
 				os.writeObject(s);
 				os.flush();
 			}

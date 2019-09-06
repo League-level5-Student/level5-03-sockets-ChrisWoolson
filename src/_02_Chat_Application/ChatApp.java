@@ -5,9 +5,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import _00_Click_Chat.gui.ButtonClicker;
-import _00_Click_Chat.networking.Client;
-import _00_Click_Chat.networking.Server;
+import _02_Chat_Application.Client;
+import _02_Chat_Application.Server;
 
 /*
  * Using the Click_Chat example, write an application that allows a server computer to chat with a client computer.
@@ -15,18 +14,18 @@ import _00_Click_Chat.networking.Server;
 
 public class ChatApp extends JFrame{
 //JButton button = new JButton("CLICK");
-JButton button = new JButton("CLICK");
+JButton button = new JButton("Send message");
 	
 	Server server;
 	Client client;
 	
 	
 	public static void main(String[] args) {
-		new ButtonClicker();
+		new ChatApp();
 	}
 	
 	public ChatApp(){
-		
+		System.out.println("Working");
 		int response = JOptionPane.showConfirmDialog(null, "Would you like to host a connection?", "Buttons!", JOptionPane.YES_NO_OPTION);
 		if(response == JOptionPane.YES_OPTION){
 			server = new Server(8080);
